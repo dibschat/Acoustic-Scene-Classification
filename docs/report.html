@@ -1,77 +1,72 @@
-<html>
-	<head>
-		<style type="text/css">
-			body{font-family: sans-serif;}
-			p{display: inline-block;}
-			img{display: block;}
-			.container{width: 90%;position absolute;margin: auto;}
-			.title{position: relative;width: 90%;margin: auto;text-align: center;font-weight: bold;font-size: 28px;padding: 1%;}
-			.section{position: relative;width: 90%;margin: auto;padding: 2%;}
-			.subsection{position: relative; width: 98%;text-align: justify;padding: 10px;}
-			.heading{position: relative; width: 98%;text-align: left;font-size: 22px;font-weight: bold;}
-			.text{width: 95%;font-size: 18px;text-align: justify;padding: 10px 0px 10px 0px;}
-			.authors{position: relative;width: 80%;margin: auto;padding: 2%;font-style: italic;text-align: center;font-size: 16px;}
-			.image{width: 95%;font-size: 14px;text-align: left;}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<div class="title">DEEP CONVOLUTIONAL NEURAL NETWORKS AND SUCCESS WEIGHT ENSEMBLE LEARNING FOR ACOUSTIC SCENE CLASSIFICATION</div>
+<!doctype html>
 
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Acoustic Scene Classification</title>
+        <link rel="stylesheet" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">   
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap" rel="stylesheet">        
+	</head>
+	<div align="center" class="container">
+			<div class="title">
+				Deep Convolutional Neural Networks and Success Weight Ensemble Learning for Acoustic Scene Classification
+			</div>
 			<div class="authors">
 				<!-- Start edit here  -->
-				<p>Dibyadip Chatterjee, Bachelor of Electronics and Telecommunication Engineering, Jadavpur University</br>Project Guide: Dr. Prithwijit Guha, Department of Electronics and Electrical Engineering, IIT Guwahati</p> &nbsp; &nbsp;				
+				<p><b>Dibyadip Chatterjee</b>, Bachelors of Electronics and Telecommunication Engineering, Jadavpur University</br>Project Guide: Dr. Prithwijit Guha, Department of Electronics and Electrical Engineering, IIT Guwahati</p> &nbsp; &nbsp;				
 				<!-- Stop edit here -->
 			</div>
-
-
 			<div class="section">
-				<div class="heading">Abstract</div>
+				<div class="heading-abstract">Abstract</div>
 				<div class="text">
 					<!-- Start edit here  -->
-					The goal of Acoustic Scene Classification is to classify a test recording into one of the predefined classes that characterizes the environment in which it was recorded viz. "bus", "beach" and "library".
-					</br></br>
-					In this report, I demonstrate how I applied convolutional neural network and success weight ensemble learning to build the pipeline for scene classification. I also present a network structure designed for paired input to make the most of the spatial information contained in the stereo. It is known that, ensemble methods aggregate the decisions of diverse component classifiers to achieve superior classification performances. After using a number of features viz. MEL and MFCC, it was found that classifiers of all the features have a certain region of success. Region of success is a part of the feature space where they classify the given data correctly. The regions of success of the different classifiers have a significant non-overlapping region which can be used to increase the final accuracy. In order to achieve this, the weights in the ensemble structure will not only have to be classifier dependent but also instance dependent i.e. depending on the input data, the weights of each classifier should change. We have used a Support Vector Regressor to train the weights of each classifier according to the instances.</br>
-					The proposed architecture is trained and tested on the "TUT Acoustic Scenes 2017" dataset.
+					<p>The goal of Acoustic Scene Classification is to classify a test recording into one of the predefined classes that characterizes the environment in which it was recorded viz. "bus", "beach" and "library".</p>
+
+					<p>In this report, I demonstrate how I applied convolutional neural network and success weight ensemble learning to build the pipeline for scene classification. I also present a network structure designed for paired input to make the most of the spatial information contained in the stereo. It is known that, ensemble methods aggregate the decisions of diverse component classifiers to achieve superior classification performances. After using a number of features viz. MEL and MFCC, it was found that classifiers of all the features have a certain region of success. Region of success is a part of the feature space where they classify the given data correctly. The regions of success of the different classifiers have a significant non-overlapping region which can be used to increase the final accuracy. In order to achieve this, the weights in the ensemble structure will not only have to be classifier dependent but also instance dependent i.e. depending on the input data, the weights of each classifier should change. We have used a Support Vector Regressor to train the weights of each classifier according to the instances.</br>
+					The proposed architecture is trained and tested on the "TUT Acoustic Scenes 2017" dataset.</p>
 					<!-- Stop edit here -->
 				</div>
 			</div>
 
 			<div class="section">
 				<div class="heading">1. Introduction</div>
-				<div class="text">
-					<!-- Start edit here  -->
-					A variety of preprocessing methods have been used such as binaural representations, harmonic percussive source separation and mel-scale frequency cepstral coefficients
-					(MFCC). The experimental results show that the proposed network strictures and the preprocessing methods effectively learn acoustics characteristics from the recordings and their ensemble model significantly reduces the error rate further, exhibiting an accuracy of 77.11% for the test dataset which is extracted randomly as a 20% division from the entire dataset. The proposed system is based on the architecture developed by the Runners Up of DCASE 2017.
-					<!-- Stop edit here -->
-				</div>
-
+					<div class="text">
+						<p>A variety of preprocessing methods have been used such as binaural representations, harmonic percussive source separation and mel-scale frequency cepstral coefficients (MFCC). The experimental results show that the proposed network strictures and the preprocessing methods effectively learn acoustics characteristics from the recordings and their ensemble model significantly reduces the error rate further, exhibiting an accuracy of 77.11% for the test dataset which is extracted randomly as a 20% division from the entire dataset. The proposed system is based on the architecture developed by the Runners Up of DCASE 2017.</p>
+					</div>
 				<div class="subsection">
 					<div class="heading">1.1 Introduction to the Problem</div>
 					<div class="text">
 						<!-- Start edit here  -->
-						Sounds contain a variety of information that humans use to understand the surroundings, and our behaviors and thoughts are heavily based on this auditory information along with information gathered from different sensory registers. Even if visual information is not given, humans can easily recognize the scene from the surrounding sounds because our expectations are well trained from experience.For instance, we know that bird chirping sound is likely recorded in the park, and cutlery sound is recorded in the restaurant. In addition, it is also possible to guess the size of the space from the sound, because cave-like environment such as metro station produce a lot of reverberations while outdoor scenes do not. However, creating an automated system that understands acoustic scenes is difficult, because it is a fairly high level of information.
+						<p>Sounds contain a variety of information that humans use to understand the surroundings, and our behaviors and thoughts are heavily based on this auditory information along with information gathered from different sensory registers. Even if visual information is not given, humans can easily recognize the scene from the surrounding sounds because our expectations are well trained from experience.For instance, we know that bird chirping sound is likely recorded in the park, and cutlery sound is recorded in the restaurant. In addition, it is also possible to guess the size of the space from the sound, because cave-like environment such as metro station produce a lot of reverberations while outdoor scenes do not. However, creating an automated system that understands acoustic scenes is difficult, because it is a fairly high level of information.</p>
 						<!-- Stop edit here -->
 					</div>
 				</div>
 
 				<div class="subsection">
-					<div class="heading">1.2 Figure</div>
-					<div class="image">
+					<div class="heading">1.2 Pipeline</div>
+					<div align="center">
 						<!-- Start edit here  -->
-						<img src="Pictures/Pipeline.png" alt="The Image is unavailable!" width="1000px" height="750px"/>
+						<img src="images/Pipeline.png" alt="The Image is unavailable!" width="1000px" height="750px"/>
 						<!-- Stop edit here -->
 					</div>
 				</div>
+
 				<div class="subsection">
-					<div class="heading">1.3 Literature Review</div>
+					<div class="heading">1.3 Past Work</div>
 					<div class="text">
 						<!-- Start edit here  -->
-						The proposed architecture is based on the paper "<a href="https://www.cs.tut.fi/sgn/arg/dcase2017/documents/challenge_technical_reports/DCASE2017_Han_207.pdf">Convolutional Neural Networks With Binaural Representation and Background Subtraction for Acoustic Scene Classification</a>" by Yoonchang Han, Jeongsoo Park, Kyogu Lee.</br></br>
-						In this paper, they demonstrated how they applied convolutional neural network for DCASE 2017 task 1, Acoustic Scene Classification. They propose a variety of preprocessing methods that emphasize different acoustic characteristics such as binaural representations, harmonic-percussive source separation, and background subtraction. They also presented a network structure designed for paired input to make the most of the spatial information contained in the stereo. The experimental results show that the proposed network structures and the preprocessing methods effectively learn acoustic characteristics from the audio recordings, and their ensemble model significantly reduces the error rate further. Their proposed system achieved second place in DCASE 2017 task 1 with an accuracy of 80.40% on the evaluation set.
-						<!-- Stop edit here -->
+						<p>The proposed architecture is based on the paper "<a href="https://www.cs.tut.fi/sgn/arg/dcase2017/documents/challenge_technical_reports/DCASE2017_Han_207.pdf">Convolutional Neural Networks With Binaural Representation and Background Subtraction for Acoustic Scene Classification</a>" by Yoonchang Han, Jeongsoo Park, Kyogu Lee.</p>
+						<p>In this paper, they demonstrated how they applied convolutional neural network for DCASE 2017 task 1, Acoustic Scene Classification. They propose a variety of preprocessing methods that emphasize different acoustic characteristics such as binaural representations, harmonic-percussive source separation, and background subtraction. They also presented a network structure designed for paired input to make the most of the spatial information contained in the stereo. The experimental results show that the proposed network structures and the preprocessing methods effectively learn acoustic characteristics from the audio recordings, and their ensemble model significantly reduces the error rate further. Their proposed system achieved second place in DCASE 2017 task 1 with an accuracy of 80.40% on the evaluation set.</p>
+					<!-- Stop edit here -->
 					</div>
 				</div>
+
 				<div class="subsection">
 					<div class="heading">1.4 Report Organization</div>
 					<div class="text">
@@ -84,45 +79,52 @@
 				</div>
 			</div>
 
+
 			<div class="section">
 				<div class="heading">2. Proposed Approach</div>
 				<div class="text">
 					<!-- Start edit here  -->
-					In general, a full 44.1 kHz audio was used without downsampling. Then, 128 bin mel-scale spectrograms were extracted which is a sufficient size to keep the spectral characteristics while greatly reducing the feature dimensions. Instead of converting the collected spectrograms to their corresponding images since their is always a compression loss, we directly passed the numpy array for preprocessing. </br>
-					<img src="Pictures/Preprocess.png" alt="The Image is unavailable!" width="400px" height="400px"/>The following features were extracted from the input stereo audio:</br>
-					<li><b>Mono Channel :</b> The stereo audio was linearly averaged over its left and right channel to achieve the mono channel.</li>
-					<li><b>Left, Right Channel :</b> The mel spectrogram numpy array collected was divided into left and right Channel.</li>
-					<li><b>Mid, Side Channel :</b> Mid Channel= Left Channel + Right Channel; Mid Channel : Side Channel= Left Channel - Right Channel</li>
-					<li><b>Harmonic, Percussive Feature :</b> Sound can be generally divided into two types: harmonic and percussive. Here, using a Harmonic-Percussive-Source-Separation algorithm, we separated the Harmonic and Percussive components to get a better discrimination between 2 sounds.</li>
-					<li><b>MFCC Feature :</b> In sound processing, the mel-frequency cepstrum(MFC) is a representation of the short-term power spectrum of a sound, based on a linear cosine transform of a log power spectrum on a nonlinear mel scale of frequency. Mel-frequency cepstral coefficients(MFCCs) are coefficients that collectively make up an MFC. They are derived from a type of cepstral representation of the audio clip. The difference between the cepstrum and the mel frequency cepstrum is that in the MFC, the frequency bands are equally spaced on the mel scale, which approximates the human auditory system's response more closely than the linearly-spaced frequency bands used in the normal cepstrum.</li></br>
-					<img src="Pictures/CNN.png" alt="The Image is unavailable!" width="950px" height="420px"/>
-					Thus 8 features were collected. 8 classifiers were trained for the 8 features. A deep Convolutional Neural Network was used as the classifier with 4 Convolutional and Pooling Layers and 1 Hidden Layer. However, it was found that it is not highly effective to increase the number of layers or to use a residual connection, at least in this framework, likely due to insufficient amount of data to extract full advantage out of it. ReLU non-linearity was used for activation and the last layer has softmax output to calculate the probability of success for further ensemble learning. </br>
-					The results of the 8 classifiers were thus taken as input and 8 Support Vector Regressors were trained on the validation set (20% of training set), for each classifiers output as input. This gave us the weights(also called success prediction function) of the 8 classifiers.</br>
-					The input to the SVR is {X_validation, Y} where (Y = kronicker_delta(predicted_label - class_label) for all X_validation for all features)</br>
-					The purpose of using SVR to predict weights is that the weights are not only classifier dependent but also instance dependent. This becomes important when a classifier gives good results for a particular part of the feature space(region of success) and gives worse results for other parts.
+					<p>In general, a full 44.1 kHz audio was used without downsampling. Then, 128 bin mel-scale spectrograms were extracted which is a sufficient size to keep the spectral characteristics while greatly reducing the feature dimensions. Instead of converting the collected spectrograms to their corresponding images since their is always a compression loss, we directly passed the numpy array for preprocessing. </p>
+					<img class="image" src="images/Preprocess.png" alt="The Image is unavailable!">The following features were extracted from the input stereo audio:</br>
+					<p>
+						<li><b>Mono Channel :</b> The stereo audio was linearly averaged over its left and right channel to achieve the mono channel.</li>
+						<li><b>Left, Right Channel :</b> The mel spectrogram numpy array collected was divided into left and right Channel.</li>
+						<li><b>Mid, Side Channel :</b> Mid Channel= Left Channel + Right Channel; Mid Channel : Side Channel= Left Channel - Right Channel</li>
+						<li><b>Harmonic, Percussive Feature :</b> Sound can be generally divided into two types: harmonic and percussive. Here, using a Harmonic-Percussive-Source-Separation algorithm, we separated the Harmonic and Percussive components to get a better discrimination between 2 sounds.</li>
+						<li><b>MFCC Feature :</b> In sound processing, the mel-frequency cepstrum(MFC) is a representation of the short-term power spectrum of a sound, based on a linear cosine transform of a log power spectrum on a nonlinear mel scale of frequency. Mel-frequency cepstral coefficients(MFCCs) are coefficients that collectively make up an MFC. They are derived from a type of cepstral representation of the audio clip. The difference between the cepstrum and the mel frequency cepstrum is that in the MFC, the frequency bands are equally spaced on the mel scale, which approximates the human auditory system's response more closely than the linearly-spaced frequency bands used in the normal cepstrum.</li>
+					</p>
+					<img src="images/CNN.png" alt="The Image is unavailable!" width="950px" height="420px"/>
+					<p>Thus 8 features were collected. 8 classifiers were trained for the 8 features. A deep Convolutional Neural Network was used as the classifier with 4 Convolutional and Pooling Layers and 1 Hidden Layer. However, it was found that it is not highly effective to increase the number of layers or to use a residual connection, at least in this framework, likely due to insufficient amount of data to extract full advantage out of it. ReLU non-linearity was used for activation and the last layer has softmax output to calculate the probability of success for further ensemble learning. </br>
+					The results of the 8 classifiers were thus taken as input and 8 Support Vector Regressors were trained on the validation set (20% of training set), for each classifiers output as input. This gave us the weights(also called success prediction function) of the 8 classifiers.</p>
+					<p>The input to the SVR is {X_validation, Y} where (Y = kronicker_delta(predicted_label - class_label) for all X_validation for all features)</p>
+					<p>The purpose of using SVR to predict weights is that the weights are not only classifier dependent but also instance dependent. This becomes important when a classifier gives good results for a particular part of the feature space(region of success) and gives worse results for other parts.</p>
 					<!-- Stop edit here -->
 				</div>
 			</div>
 
 			<div class="section">
 				<div class="heading">3. Experiments &amp; Results</div>
-				<div class="subsection">
+				<div class="subsection">	
 					<div class="heading">3.1 Dataset Description</div>
 					<div class="text">
 						<!-- Start edit here  -->
-						TUT Acoustic Scenes 2017 dataset is used for training, validation and testing purposes.The dataset consists of recordings from various acoustic scenes, all having distinct recording locations. For each recording location, 3-5 minute long audio recording was captured. The original recordings were then split into segments with a length of 10 seconds. These audio segments are provided in individual files each having the name of their class label.</br></br>
-						20% of the dataset was kept for testing purposes and the remaining 80% was again divided into 80% for training the CNNs and 20% for 1-fold validation and for training the ensemble SVRs.
+						<p>TUT Acoustic Scenes 2017 dataset is used for training, validation and testing purposes.The dataset consists of recordings from various acoustic scenes, all having distinct recording locations. For each recording location, 3-5 minute long audio recording was captured. The original recordings were then split into segments with a length of 10 seconds. These audio segments are provided in individual files each having the name of their class label.</p>
+						<p>20% of the dataset was kept for testing purposes and the remaining 80% was again divided into 80% for training the CNNs and 20% for 1-fold validation and for training the ensemble SVRs.</p>
 						<!-- Stop edit here -->
-					</div>
+					</div>				
 				</div>
 				<div class="subsection">
 					<div class="heading">3.2 Discussion</div>
 					<div class="text">
 						<!-- Start edit here  -->
-						<b>Feature Accuracy on the Cross-Validation Set</b>
-						<img src="Pictures/Bar Chart.png" alt="The Image is unavailable!" width="900px" height="750px"/>
-						<b>Confusion Matrix on the Evaluation Set</b>
-						<img src="Pictures/conf_matrix.png" alt="The Image is unavailable!" width="900px" height="900px"/>
+						<img class="bar" src="images/Bar Chart.png" alt="The Image is unavailable!">
+						<div class="footer text-center">
+							<b>Feature Accuracy on the Cross-Validation Set</b>
+						</div>
+						<img src="images/conf_matrix.png" alt="The Image is unavailable!">
+						<div class="footer text-center">
+							<b>Confusion Matrix on the Evaluation Set</b>
+						</div>
 						Evaluation Accuracy after Ensemble Learning was found to be 77.11% which is over a 5% rise from the maximum individual feature accuracy. The evaluation accuracy is within the top 10 reported accuracies for the challenge.
 						<!-- Stop edit here -->
 					</div>
