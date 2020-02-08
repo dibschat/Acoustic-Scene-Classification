@@ -1,5 +1,5 @@
 # Acoustic Scene Classification
-Deep CNN and Ensemble Learning based Acoustic Scene Classification implemented using TFLearn Library for Tensorflow.
+Deep Convolutional Neural Networks and Success Weight Ensemble Learning for Acoustic Scene Classification
 
 ## License
 MIT
