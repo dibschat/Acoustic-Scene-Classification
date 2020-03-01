@@ -9,6 +9,11 @@ Report: [here](https://chatdip98.github.io/Acoustic-Scene-Classification/report.
 ## Results
 ![confusionmatrix](https://github.com/chatdip98/Acoustic-Scene-Classification/blob/master/docs/images/conf_matrix_aligned.png)
 
+|Ensemble Method |   Acc |
+| --------   | -----  |
+|Majority Voting  | 76.08% | 
+|Success Weighted | 77.11% |
+
 ## License
 MIT
 
