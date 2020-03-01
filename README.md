@@ -13,7 +13,7 @@ Report: [here](https://chatdip98.github.io/Acoustic-Scene-Classification/report.
 |Success Weighted | 77.11% |
 
 ## Confusion Matrix
-![confusionmatrix](https://github.com/chatdip98/Acoustic-Scene-Classification/blob/master/docs/images/conf_matrix_aligned.png)
+![confusionmatrix](https://github.com/chatdip98/Acoustic-Scene-Classification/blob/master/docs/images/conf_matrix.png)
 
 ## License
 MIT
